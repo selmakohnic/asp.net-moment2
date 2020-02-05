@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <!-- Partial som består av headern och den globala navigeringen -->
+    <partial name="~/Views/Shared/_HeaderNav.cshtml" />
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <p>Av Selma Kohnic | ASP.NET med C# – DT102G | Moment 2</p>
+    </footer>
+</body>
+</html>

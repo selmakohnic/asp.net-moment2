@@ -1,0 +1,54 @@
+﻿@model moment2.Models.Travel
+
+@{
+    ViewData["Title"] = "Ny resa";
+}
+<!-- Partial som består av en popup-box med ett meddelande -->
+<partial name="~/Views/Shared/_PopupBox.cshtml" />
+
+<h1>@ViewData["Title"]</h1>
+<p>Skriv in land, stad, flygkostnad (i kr), hotellkostnad (i kr), resedatum, en kort beskrivning och checka i boxen om du ska åka själv.</p>
+
+<!-- Formulär med felhantering -->
+<form asp-action="TravelDone" method="post">
+    <div asp-validation-summary="All" class="errorMessage">
+        <span>Fyll i alla fält på ett korrekt sätt!</span>
+    </div>
+    <p>
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="inputField" />
+    </p>
+    <p class="inputRight">
+        <label asp-for="City"></label>
+        <input asp-for="City" class="inputField" />
+    </p>
+    <p>
+        <label asp-for="CostOfFlight"></label>
+        <input asp-for="CostOfFlight" class="inputField" />
+    </p>
+    <p class="inputRight">
+        <label asp-for="CostOfHotel"></label>
+        <input asp-for="CostOfHotel" class="inputField" />
+    </p>
+    <p>
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="inputField" />
+    </p>
+    <p class="inputRight">
+        <label asp-for="Description">@Html.DisplayNameFor(model => model.Description) (max 30 tecken)</label>
+        <textarea asp-for="Description" class="inputField"></textarea>
+    </p>
+    <p>
+        <label class="form-check-label">
+            <input type="checkbox" asp-for="TravelAlone" /> @Html.DisplayNameFor(model => model.TravelAlone)
+        </label>
+    </p>
+    <p id="button">
+        <input type="submit" value="Lägg till" id="btn" />
+    </p>
+</form>
+
+<!--
+Sammanfattning felmeddelande    <div asp-validation-summary="All" class="errorMessage"></div>
+Enskilt felmeddelande           <span asp-validation-for="Country" class="errorMessage"></span>
+-->

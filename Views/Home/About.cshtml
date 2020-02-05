@@ -1,0 +1,33 @@
+﻿@model moment2.Models.ViewModeln
+
+@{
+    ViewData["Title"] = "Om webbplatsen";
+}
+<!-- Partial som består av en popup-box med ett meddelande -->
+<partial name="~/Views/Shared/_PopupBox.cshtml" />
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Besök startsidan och sedan denna sida igen för att få ett meddelande från en sessionsvariabel: @ViewBag.text</p>
+<p>På den här sidan finns det lite information om vad varje resa innehåller för attribut.</p>
+
+<h3>Samtliga attribut som tillhör varje resa är följande:</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Attribut</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Skriver ut reseattributen med tillhörande id -->
+        @foreach (moment2.Models.TravelAttributes travel in Model.TravelAttributesList)
+        {
+            <tr>
+                <td>@travel.Id</td>
+                <td>@travel.AttributeName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

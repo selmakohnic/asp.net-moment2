@@ -1,0 +1,39 @@
+﻿@model moment2.Models.Travel
+
+@{
+    ViewData["Title"] = "Ny resa tillagd";
+}
+<!-- Partial som består av en popup-box med ett meddelande -->
+<partial name="~/Views/Shared/_PopupBox.cshtml" />
+
+<h1>En ny resa har lagts till</h1>
+<p>Nedan visas en sammanfattning av de uppgifter som du har skrivit in.</p>
+<p>En total kostnad för resan har räknats ut med kostnaden för flyget, hotellet och grundavgiften på 1000 kr.</p>
+
+<!-- Utskrift av resans information -->
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Country)</th>
+            <th>@Html.DisplayNameFor(model => model.City)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.CostOfFlight)</th>
+            <th>@Html.DisplayNameFor(model => model.CostOfHotel)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalCost)</th>
+            <th>@Html.DisplayNameFor(model => model.TravelAlone)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Country)</td>
+            <td>@Html.DisplayFor(model => model.City)</td>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+            <td>@Html.DisplayFor(model => model.Date)</td>
+            <td>@Html.DisplayFor(model => model.CostOfFlight) kr</td>
+            <td>@Html.DisplayFor(model => model.CostOfHotel) kr</td>
+            <td>@Html.DisplayFor(model => model.TotalCost) kr</td>
+            <td>@Html.DisplayFor(model => model.TravelAlone)</td>
+        </tr>
+    </tbody>
+</table>
