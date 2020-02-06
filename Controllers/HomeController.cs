@@ -15,7 +15,7 @@ namespace moment2.Controllers
         public IActionResult Index()
         {
             //Skickar data från controllern till vyn med ViewData och ViewBag
-            ViewData["Title"] = "Välkommen till min reselogg!";
+            ViewData["TitleIndex"] = "Välkommen till min reselogg!";
             ViewBag.subheading = "På den här webbplatsen lägger jag till alla mina resor.";
             
             //Sessionsvariabel från Index till About
